@@ -1,0 +1,16 @@
+Burgerveen RP Website _
+		      V
+		      - Politie ()
+                      - Ambulance ()
+                      - ANWB ()
+                      - Justitie (Advocaat, Rechter)
+                      - Cardealer
+                      - Makelaar
+
+- Solliciteren mogelijk maken op basis van ID. 70%
+- Appealsysteem
+- Report burger systeem
+- Nieuws systeem (grid van 3 berichten) 90%
+- Server regels pagina
+- Server updates
+- Sollicitaties open zetten op basis van enabled 1 of 0 50%

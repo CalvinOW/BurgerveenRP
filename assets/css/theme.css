@@ -1,0 +1,167 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css");
+
+/* Responsive Design */
+
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: #edf2f5;
+    }
+    [class*="bericht"] {
+        margin-top: 10px;
+    }
+    [class*="col nieuws"] {
+        width: 100% !important;
+    }
+    [class*="container nieuws voorpagina"] {
+        width: 100% !important;
+        padding-top: 75px !important;
+        background-color: white !important;
+    }
+    [class*="container join voorpagina"] {
+        background-color: #3452ff0d;
+        min-width: 100%;
+        padding: 75px 10% 25px 10%;
+    }
+    [class*="container jobs voorpagina"] {
+        width: 100% !important;
+        padding-top: 75px !important;
+        background-color: white !important;
+    }
+    [class*="header"] {
+        background-image: url("../images/header-background3.jpg");
+        background-size: cover;
+        height: 150px;
+    }
+    [class*="logo"] {
+        padding-top: 50px;
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    [class*="navbar"] {
+        background-color: #ffffff !important;
+        color: rgb(91, 88, 255) !important;
+    }
+    [class*="nav-link"] {
+        color: rgb(91, 88, 255) !important;
+    }
+}
+
+
+/* Style */
+@media only screen and (min-width: 768px) {
+    a:hover {
+        color: #509ee3;
+      }
+
+    .profiel {
+        float: right;
+    }
+      
+    body {
+        background-color: #edf2f5;
+    }
+    .header {
+        background-image: url("../images/header-background3.jpg");
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        height: 30%;
+    }
+    .alert {
+        margin-left: 150px;
+    }
+    .container.jobs.voorpagina {
+        min-width: 100%;
+        padding: 75px 10% 100px 10%;
+        background-color: white;
+    }
+    .container.nieuws.voorpagina {
+        min-width: 100%;
+        padding: 75px 10% 100px 10%;
+        background-color: white;
+    }
+    .container.join.voorpagina {
+        background-color: #3452ff0d;
+        min-width: 100%;
+        padding: 75px 10% 25px 10%;
+    }
+    /* Override Bootstrap */
+    .navbar {
+        background-color: #ffffff !important;
+        color: white !important;
+    }
+    .nav-link {
+        color: rgb(91, 88, 255) !important;
+    }
+    .logo {
+        height: 260px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.btn-primary {
+    background-color: rgb(91, 88, 255) !important;
+        border-color: rgb(70, 67, 255) !important;
+}
+
+.btn-primary:hover {
+    background-color: rgb(77, 75, 214) !important;
+        border-color: rgb(77, 75, 214) !important;
+}
+
+.navbar {
+    border-bottom: 1px solid #00000017 !important;
+}
+
+.nieuws-author {
+    color: rgb(91, 88, 255) !important;
+    font-size: 12px;
+}
+
+.bericht {
+    background-color: #00000005;
+    border-radius: 10px;
+}
+
+.content {
+    padding: 15px;
+}
+
+.nieuws-intro {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.jobs-intro {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+hr.nieuws {
+    max-width: 290px;
+    height: 2px;
+    color: rgb(91, 88, 255);
+}
+
+hr.jobs {
+    max-width: 290px;
+    height: 2px;
+    color: rgb(91, 88, 255);
+}
+
+.thumbnail {
+    min-height: 150px;
+}
+
+footer {
+    min-height: 50px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    padding-top: 15px;
+}
