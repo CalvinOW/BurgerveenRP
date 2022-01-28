@@ -20,14 +20,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="index" style="font-size: 18px;"><span class="fa fa-home"></span> Voorpagina</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="nieuws" style="font-size: 18px;"><span class="fa fa-newspaper-o"></span> Nieuws</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="solliciteren" style="font-size: 18px;"><span class="fa fa-vcard-o"></span> Solliciteren</a>
+                    <a class="nav-link active" href="solliciteren" style="font-size: 18px; border-bottom: 1px solid !important;"><span class="fa fa-vcard-o"></span> Solliciteren</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="updates" style="font-size: 18px;"><span class="fa fa-gear"></span> Updates</a>
@@ -39,7 +39,7 @@
                     <a class="nav-link" href="appeal" style="font-size: 18px;"><span class="fa fa-home"></span> Appeal</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="report" style="font-size: 18px; border-bottom: 1px solid !important;"><span class="fa fa-flag"></span> Report</a>
+                    <a class="nav-link" href="report" style="font-size: 18px;"><span class="fa fa-flag"></span> Report</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="status" style="font-size: 18px;"><span class="fa fa-signal"></span> Status</a>
@@ -50,29 +50,19 @@
     <div class="container jobs voorpagina">
         <div class="row">
             <div class="jobs-intro">
-                <h3>BURGERVEEN REPORT</h3><br>
-                <p>Vul alles na waarheid in!</p>
+                <h3>BEDANKT</h3>
                 <center>
                     <hr class="jobs">
-                <form action="./systeem/classes/send_report.php" style="width: 50%;" method="post">
-                    <p>
-                        <label for="burgernaam">Burgernaam:</label>
-                        <input class="form-control" type="text" name="burgernaam" id="burgernaam" required>
-                    </p>
-                    <p>
-                        <label for="reden">Reden van Report:</label>
-                        <textarea class="form-control" rows="4" cols="50" type="textarea" name="reden" id="reden"required></textarea>
-                    </p>
-                    <p>
-                        <label for="bewijs">Youtube URL (Bewijs):</label>
-                        <input class="form-control" type="text" name="bewijs" id="bewijs">
-                    </p>
-                    <input type="submit" class="btn btn-primary" value="Verstuur Report">
-                </form>
+                    <br><br>
+                    Bedankt voor het opsturen!<br>
+                    Wij zullen jouw zo spoedig mogelijk contacteren.
                 </center>
             </div>
         </div>
     </div>
 </body>
+<footer>
+    Website medemogelijk gemaakt door Calvin.
+</footer>
 
 </html>

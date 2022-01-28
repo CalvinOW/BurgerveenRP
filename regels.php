@@ -20,7 +20,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="index" style="font-size: 18px;"><span class="fa fa-home"></span> Voorpagina</a>
                 </li>
                 <li class="nav-item">
@@ -47,6 +47,11 @@
             </ul>
         </div>
     </nav>
+    <div class="container join voorpagina">
+        <div class="row">
+            <?php include_once("./systeem/classes/export_regels.php"); ?>
+        </div>
+    </div>
 </body>
 
 </html>

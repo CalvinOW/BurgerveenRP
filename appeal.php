@@ -47,6 +47,32 @@
             </ul>
         </div>
     </nav>
+    <div class="container jobs voorpagina">
+        <div class="row">
+            <div class="jobs-intro">
+                <h3>BURGERVEEN APPEAL</h3><br>
+                <p>Vul alles na waarheid in!</p>
+                <center>
+                    <hr class="jobs">
+                <form action="./systeem/classes/send_appeal.php" style="width: 50%;" method="post">
+                    <p>
+                        <label for="Burgernaam">Burgernaam:</label>
+                        <input class="form-control" type="text" name="Burgernaam" id="Burgernaam" required>
+                    </p>
+                    <p>
+                        <label for="omschijving">Reden van Ban of Mute:</label>
+                        <textarea class="form-control" rows="4" cols="50" type="textarea" name="omschijving" id="omschijving"required></textarea>
+                    </p>
+                    <p>
+                        <label for="Waarom">Waarom:</label>
+                        <textarea class="form-control" rows="4" cols="50" type="Waarom" name="Waarom" id="Waarom"required></textarea>
+                    </p>
+                    <input type="submit" class="btn btn-primary" value="Verstuur Appeal">
+                </form>
+                </center>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

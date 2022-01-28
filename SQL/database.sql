@@ -1,23 +1,43 @@
 /* Table Users Aanmaken */
-
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
   `rankid` int(11) DEFAULT 4
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+ALTER TABLE
+  `users`
+ADD
+  PRIMARY KEY (`id`),
+ADD
+  UNIQUE KEY `username` (`username`);
 
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+ALTER TABLE
+  `users`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 1;
+
 COMMIT;
 
-INSERT INTO `users` (`id`, `username`, `password`, `created_at`, `rankid`) VALUES
-(1, 'Admin', '$2y$10$7kx2HqMUFHLdSvd7eyNLAudz02GhHHsCdE7m2S27f.X0IzDqwkrnq', '2021-03-18 12:50:37', 3);
+INSERT INTO
+  `users` (
+    `id`,
+    `username`,
+    `password`,
+    `created_at`,
+    `rankid`
+  )
+VALUES
+  (
+    1,
+    'Admin',
+    '$2y$10$7kx2HqMUFHLdSvd7eyNLAudz02GhHHsCdE7m2S27f.X0IzDqwkrnq',
+    '2021-03-18 12:50:37',
+    3
+  );
 
 /* Table Nieuws Aanmaken */
 CREATE TABLE `nieuws` (
@@ -26,7 +46,7 @@ CREATE TABLE `nieuws` (
   `nieuws` varchar(5000) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
   `author` varchar(25) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
 /* Table Role Permissions Aanmaken */
 CREATE TABLE `permissions` (
@@ -39,12 +59,24 @@ CREATE TABLE `permissions` (
   `can_access_regels` int(11) DEFAULT 0,
   `can_access_updates` int(11) DEFAULT 0,
   `role_naam` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
-INSERT INTO `permissions` (`id`, `rankid`, `can_access_admin`, `can_access_sollicitaties`, `can_access_appeals`, `can_access_nieuws`, `can_access_regels`, `can_access_updates`, `role_naam`) VALUES
-(1, 3, 1, 1, 1, 1, 1, 1, 'Admin'),
-(2, 2, 1, 0, 0, 1, 0, 0, 'Nieuws Reporter'),
-(3, 1, 0, 0, 0, 0, 0, 0, 'Gebruiker');
+INSERT INTO
+  `permissions` (
+    `id`,
+    `rankid`,
+    `can_access_admin`,
+    `can_access_sollicitaties`,
+    `can_access_appeals`,
+    `can_access_nieuws`,
+    `can_access_regels`,
+    `can_access_updates`,
+    `role_naam`
+  )
+VALUES
+  (1, 3, 1, 1, 1, 1, 1, 1, 'Admin'),
+  (2, 2, 1, 0, 0, 1, 0, 0, 'Nieuws Reporter'),
+  (3, 1, 0, 0, 0, 0, 0, 0, 'Gebruiker');
 
 /* Aanmaken Table Updates */
 CREATE TABLE `updates` (
@@ -53,9 +85,45 @@ CREATE TABLE `updates` (
   `updates` varchar(5000) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
   `author` varchar(25) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
-INSERT INTO updates (`id`, `titel`, `updates`, `created_at`, `author`) VALUES ('1', 'Burgerveen Website', 'Vandaag zijn er weer een aantal wijzigingen doorgevoerd op onze website. Bekijk deze snel!', '2021-03-18 12:50:37', 'Admin');
+INSERT INTO
+  updates (`id`, `titel`, `updates`, `created_at`, `author`)
+VALUES
+  (
+    '1',
+    'Burgerveen Website',
+    'Vandaag zijn er weer een aantal wijzigingen doorgevoerd op onze website. Bekijk deze snel!',
+    '2021-03-18 12:50:37',
+    'Admin'
+  );
+
+CREATE TABLE `rules` (
+  `id` int(11) NOT NULL,
+  `regel` varchar(100000) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
+
+INSERT INTO
+  `rules` (`id`, `regel`, `created_at`)
+VALUES
+  ('1', 'Regels', '2021-03-18 12:50:37');
+
+CREATE TABLE `appeals` (
+  `id` int(11) NOT NULL,
+  `burgernaam` varchar(100) DEFAULT NULL,
+  `omschijving` varchar(10000) DEFAULT NULL,
+  `waarom` varchar(10000) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
+
+CREATE TABLE `reports` (
+  `id` int(11) NOT NULL,
+  `burgernaam` varchar(100) DEFAULT NULL,
+  `reden` varchar(10000) DEFAULT NULL,
+  `bewijs` varchar(10000) DEFAULT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
 /* Aanmaken Jobs Table */
 CREATE TABLE `jobs` (
@@ -65,7 +133,7 @@ CREATE TABLE `jobs` (
   `job_desc` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
   `enabled` varchar(1) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
 /* Aanmaken Sollicitaties Table */
 CREATE TABLE `sollicitaties` (
@@ -77,41 +145,110 @@ CREATE TABLE `sollicitaties` (
   `waarom` varchar(255) DEFAULT NULL,
   `motivatie` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
-INSERT INTO `jobs` (`id`, `job_titel`, `beroep`, `job_desc`, `enabled`) VALUES
-('1', 'Agent', 'politie', 'Denk jij het in je te hebben om Agent te worden bij ons Hoofdbureau? Solliciteer dan snel!', '1');
+INSERT INTO
+  `jobs` (
+    `id`,
+    `job_titel`,
+    `beroep`,
+    `job_desc`,
+    `enabled`
+  )
+VALUES
+  (
+    '1',
+    'Agent',
+    'politie',
+    'Denk jij het in je te hebben om Agent te worden bij ons Hoofdbureau? Solliciteer dan snel!',
+    '1'
+  );
 
 /* Alter Tables */
-ALTER TABLE `permissions`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE
+  `permissions`
+ADD
+  PRIMARY KEY (`id`);
 
-ALTER TABLE `sollicitaties`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE
+  `reports`
+ADD
+  PRIMARY KEY (`id`);
 
-ALTER TABLE `jobs`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE
+  `appeals`
+ADD
+  PRIMARY KEY (`id`);
 
-ALTER TABLE `updates`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE
+  `sollicitaties`
+ADD
+  PRIMARY KEY (`id`);
 
-ALTER TABLE `nieuws`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE
+  `rules`
+ADD
+  PRIMARY KEY (`id`);
 
-ALTER TABLE `sollicitaties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+ALTER TABLE
+  `jobs`
+ADD
+  PRIMARY KEY (`id`);
 
-ALTER TABLE `jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+ALTER TABLE
+  `updates`
+ADD
+  PRIMARY KEY (`id`);
 
-ALTER TABLE `updates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+ALTER TABLE
+  `nieuws`
+ADD
+  PRIMARY KEY (`id`);
 
-ALTER TABLE `nieuws`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+ALTER TABLE
+  `sollicitaties`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 0;
 
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE
+  `reports`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 0;
 
-ALTER TABLE `permissions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE
+  `appeals`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 0;
+
+ALTER TABLE
+  `jobs`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 0;
+
+ALTER TABLE
+  `updates`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 0;
+
+ALTER TABLE
+  `nieuws`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 0;
+
+ALTER TABLE
+  `users`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 2;
+
+ALTER TABLE
+  `permissions`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 3;
